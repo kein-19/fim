@@ -33,43 +33,49 @@ $admin = mysqli_fetch_array(mysqli_query($connect, "SELECT * FROM tb_admin WHERE
         
         <div class="konten">
             <div class="konten-kiri">  
-            <h1>BERITA</h1> 
-            <a href="inputberita.php" title="Tambah berita">Tambah berita</a>
+            <h1>DAFTAR ANGGOTA</h1> 
 
             <!-- Menampilkan berita -->
             <table border="1" width="100%">
             <thead>
                 <tr>
-                <th>Judul</th>
-                <th>Kategori</th>
-                <th>Deskripsi</th>
-                <th>Penulis</th>
-                <th>Tgl Posting</th>
-                <th>Gambar</th>
+                <th>Nama Lengkap</th>
+                <th>Email</th>
+                <th>Status</th>
                 <th>Actions</th>   
             </thead>
             <tbody>
             
             <?php
-            $sql = mysqli_query($connect, "SELECT * FROM tb_berita, tb_kategori, tb_admin 
-            WHERE tb_berita.id_kategori = tb_kategori.id_kategori AND tb_berita.id_admin = tb_admin.id_admin");
+            $sql = mysqli_query($connect, "SELECT * FROM tb_anggota");
             while($row = mysqli_fetch_array($sql)){
                 ?>
 
             <tr>
-            <td><?= $row['judul'];?></td>
-            <td><?= $row['kategori'];?></td>
-            <td><?= $row['text_berita'];?></td>
-            <td><?= $row['username'];?></td>
-            <td><?= $row['tgl_posting'];?></td>
-            <td><img src="../assets/images/berita/<?= $row['gambar'];?>" style="width:100px; height:100px;"></td>
-            <td><a href="editberita.php?id=<?= $row['id_berita'];?>" title="Edit">Edit</a> 
-            <a href="hapusberita.php?id=<?= $row['id_berita'];?>" title="Hapus">Hapus</a></td>
+            <td><?= $row['nama'];?></td>
+            <td><?= $row['email'];?></td>
+            <td><?= $row['status'];?></td>
+
+            <?php
+            if($row['status'] == 'Aktif'){
+                ?>
+            <td><a href="blokiranggota.php?id=<?= $row['id_anggota'];?>" title="Blokir">Blokir</a> 
+            <a href="hapusanggota.php?id=<?= $row['id_anggota'];?>" title="Hapus">Hapus</a></td>
+            
+            <?php 
+            }else{
+                ?>
+            <td><a href="bukablokiranggota.php?id=<?= $row['id_anggota'];?>" title="Buka Blokir">Buka Blokir</a> 
+            <a href="hapusanggota.php?id=<?= $row['id_anggota'];?>" title="Hapus">Hapus</a></td>
+
+                <?php 
+            }
+            ?>
+
             </tr>
             <?php  }  ?>
             </tbody>
             </table>
-
 
             </div>
             <div class="konten-kanan"></div>
