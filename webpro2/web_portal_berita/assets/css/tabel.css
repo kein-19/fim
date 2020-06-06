@@ -1,0 +1,40 @@
+table tbody td {
+    padding: 10px;
+    line-height: 20px;
+}
+table tbody td img {
+    vertical-align: text-top;
+}
+table thead th {
+    background-color: black;    
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    height: 30px;
+    line-height: 30px;
+    padding: 10px;
+    border-bottom: #ddd solid 2px;
+}
+.tabel {
+    margin: 20px;
+}
+
+.tabel table tbody td {
+    border-bottom: #ddd solid 2px;
+}    
+.tabel table tbody td a {
+    text-decoration: none;
+    color: #0E1BB4;
+    transition: .3s;
+    background-color: lightskyblue;
+    border-radius: 2px;
+    padding: 5px;
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.tabel table tbody td a:hover {
+    color: white;
+}
+

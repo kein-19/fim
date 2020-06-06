@@ -1,0 +1,123 @@
+@font-face {
+    font-family: 'open_sansregular';
+    src: url('../../font/OpenSans-Regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+	font-family: 'BebasNeue';
+	src: url('../../font/BebasNeue-Regular.woff') format('woff');
+	font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: "open_sansregular", Arial, Helvetica, sans-serif;
+}
+
+#container {
+    width: 90%;
+    margin: 10px auto;
+    border: #CCC solid 1px;
+    background: black;
+}
+
+#container #topbar {
+    position: fixed;
+    top:0;
+    width: 90%;
+    z-index: 9999;
+}
+
+#container .header h1 {
+    font-family: 'BebasNeue', Arial, Helvetica, sans-serif;
+    font-size: 50px;
+    padding: 10px;
+}
+
+#container .header p {
+    font-size: 14px;
+    padding: 10px;
+}
+
+#container .header {
+    height: 100px;
+    background: darkblue;
+    font-size: 14px;
+    color: #fff;
+    padding: 10px;
+}
+
+#container .menu {
+    border-top: 5px solid black;
+    height: 40px;
+    background: #0E1BB4;
+    font-size: 14px;
+    color: #fff;
+}
+
+#container .menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#container .menu ul li a {
+    width: 100px;
+    height: 30px;
+    float: left;
+    margin: 0 5px 5px 5px;
+    padding: 5px;
+    color: #fff;
+    text-align: center;
+    font-size: 14px;
+    text-decoration: none;
+    transition: .5s;
+    line-height: 30px;
+}
+
+#container .menu ul li a:hover {
+    color: navajowhite;
+    background-color: navy;
+}
+
+#container .konten {
+    margin: 153px auto 0 0;
+    height: 380px;
+    background:#ccc;
+    position: relative;
+}
+
+#container .konten .konten-kiri {
+    width: 70%;
+    height: 380px;
+    border: #fff solid 1px;
+    float: left;
+    background: #f5f5f5;
+    box-sizing: border-box;
+    overflow: auto;
+}
+
+#container .konten .konten-kiri h1 {
+    font-size: 25px;
+    padding: 15px;
+}
+
+#container .konten .konten-kanan {
+    font-size: 20px;
+    width: 28%;
+    height: 380px;
+    float: right;
+    background: #f5f5f5;
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+#container .footer {
+    text-align: center;
+    color: #ffff;
+    font-size: 12px;
+    height: 50px;
+    line-height: 50px;
+}
