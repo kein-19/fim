@@ -29,17 +29,13 @@ $admin = mysqli_fetch_array(mysqli_query($connect, "SELECT * FROM tb_admin WHERE
             <p>Berita terkini dan terupdate dikalangan mahasiswa</p>
         </div>
         <div class="menu">
-            <ul>
-                <li><a href="home.php" title="Home">Home</a></li>
-                <li><a href="berita.php" title="Berita">Berita</a></li>
-                <li><a href="logout.php" title="Login">Logout</a></li>
-            </ul>
+            <?php include "menu.php"; ?>
         </div>
         
         <div class="konten">
             <div class="konten-kiri">  
             <h1>IKLAN</h1> 
-            <a href="inputiklan.php" title="Tambah iklan">Tambah Iklan</a>
+            <a href="inputiklan.php" title="Tambah Iklan">Tambah Iklan</a>
 
             <!-- Menampilkan berita -->
             <table border="1" width="100%">

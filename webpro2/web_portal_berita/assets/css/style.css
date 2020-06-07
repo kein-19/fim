@@ -6,9 +6,9 @@
 }
 
 @font-face {
-	font-family: 'BebasNeue';
-	src: url('../../font/BebasNeue-Regular.woff') format('woff');
-	font-weight: normal;
+    font-family: 'BebasNeue';
+    src: url('../../font/BebasNeue-Regular.woff') format('woff');
+    font-weight: normal;
     font-style: normal;
 }
 
@@ -25,7 +25,7 @@ body {
 
 #container #topbar {
     position: fixed;
-    top:0;
+    top: 0;
     width: 90%;
     z-index: 9999;
 }
@@ -85,7 +85,7 @@ body {
 #container .konten {
     margin: 153px auto 0 0;
     height: 600px;
-    background:#ccc;
+    background: #ccc;
     position: relative;
 }
 
@@ -105,13 +105,20 @@ body {
 }
 
 #container .konten .konten-kanan {
-    font-size: 20px;
+    font-size: 14px;
     width: 28%;
     height: 600px;
     float: right;
     background: #f5f5f5;
     padding: 15px;
     box-sizing: border-box;
+    overflow: auto;
+}
+
+#container .konten .konten-kanan h3 {
+    font-size: 20px;
+    margin-top: 10px;
+    padding: 5px;
 }
 
 #container .konten .konten-kanan a {
@@ -166,29 +173,29 @@ body {
 
 
 /* ubah password */
-#container .konten .konten-kanan ul { 
+#container .konten .konten-kanan ul {
     /* style untuk bagian tombol menu */
-    list-style: none; 
-    margin: 20px 0; 
+    list-style: none;
+    margin: 20px 0;
     padding: 0;
 }
 
 #container .konten .konten-kanan ul li a {
-    width: 100%; 
-    height: 30px; 
+    width: 100%;
+    height: 30px;
     line-height: 30px;
-    float: left; 
-    color: #fff; 
-    text-align: center; 
-    font-size: 14px; 
+    float: left;
+    color: #fff;
+    text-align: center;
+    font-size: 14px;
     text-decoration: none;
     background: #0E1BB4;
     color: #fff;
 }
 
-#container .konten .konten-kanan ul li a:hover { 
+#container .konten .konten-kanan ul li a:hover {
     /* style untuk tombol saat didekatkan berubah warna */
-    font-size: 16px; 
+    font-size: 16px;
     color: navajowhite;
     background-color: navy;
 }

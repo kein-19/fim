@@ -6,7 +6,7 @@ $sesiadmin = $_SESSION['owner']; //sesi login
 if (!isset($sesiadmin)) {
     header('Location:index.php'); //redirect
 }
-$admin = mysqli_fetch_array(mysqli_query($connect, "select * from tb_admin where id_admin='$sesiadmin'"));
+$admin = mysqli_fetch_array(mysqli_query($connect, "SELECT * FROM tb_admin WHERE id_admin='$sesiadmin'"));
 
 $judul = mysqli_real_escape_string($connect, $_POST['judul']); //judul 
 $isi = mysqli_real_escape_string($connect, $_POST['isi']); //deskripsi 
@@ -33,8 +33,8 @@ if (isset($_POST['submit'])) {
         //simpan gambar ke dalam folder berita 
         move_uploaded_file($foto, '../assets/images/berita/' . $namabaru);
         //simpan data ke database 
-        $sql = mysqli_query($connect, "insert into tb_berita (judul, text_berita, id_admin, id_kategori, tgl_posting, dilihat, gambar)
-        values ('$judul', '$isi', '$sesiadmin', '$kategori', '$tgl', '1', '$namabaru')");
+        $sql = mysqli_query($connect, "INSERT INTO tb_berita (judul, text_berita, id_admin, id_kategori, tgl_posting, dilihat, gambar)
+                                        VALUES ('$judul', '$isi', '$sesiadmin', '$kategori', '$tgl', '1', '$namabaru')");
         if ($sql) {
             echo "<script>alert('Input berhasil');document.location='berita.php'</script>";
         } else {
@@ -64,11 +64,7 @@ if (isset($_POST['submit'])) {
                 <p>Berita terkini dan terupdate dikalangan mahasiswa</p>
             </div>
             <div class="menu">
-                <ul>
-                    <li><a href="home.php" title="Home">Home</a></li>
-                    <li><a href="berita.php" title="Berita">Berita</a></li>
-                    <li><a href="logout.php" title="Login">Logout</a></li>
-                </ul>
+                <?php include "menu.php"; ?>
             </div>
         </div>
         <div class="konten">

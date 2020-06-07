@@ -7,7 +7,7 @@ if (!isset($sesiadmin)) {
     header('location:index.php'); //redirect
 }
 
-$admin = mysqli_fetch_array(mysqli_query($connect, "select * from tb_admin where id_admin='$sesiadmin'"));
+$admin = mysqli_fetch_array(mysqli_query($connect, "SELECT * FROM tb_admin WHERE id_admin='$sesiadmin'"));
 ?>
 
 <!DOCTYPE html>
@@ -31,11 +31,7 @@ $admin = mysqli_fetch_array(mysqli_query($connect, "select * from tb_admin where
                 <p>Berita terkini dan terupdate dikalangan mahasiswa</p>
             </div>
             <div class="menu">
-                <ul>
-                    <li><a href="home.php" title="Home">Home</a></li>
-                    <li><a href="berita.php" title="Berita">Berita</a></li>
-                    <li><a href="logout.php" title="Login">Logout</a></li>
-                </ul>
+                <?php include "menu.php"; ?>
             </div>
         </div>
         <div class="konten">
@@ -63,7 +59,7 @@ $admin = mysqli_fetch_array(mysqli_query($connect, "select * from tb_admin where
                         <tbody>
 
                             <?php
-                            $sql = mysqli_query($connect, "select * from tb_berita, tb_kategori, tb_admin where tb_berita.id_kategori=tb_kategori.id_kategori and tb_berita.id_admin=tb_admin.id_admin");
+                            $sql = mysqli_query($connect, "SELECT * FROM tb_berita, tb_kategori, tb_admin WHERE tb_berita.id_kategori=tb_kategori.id_kategori AND tb_berita.id_admin=tb_admin.id_admin");
                             while ($row = mysqli_fetch_array($sql)) {
                             ?>
                                 <tr>
@@ -84,8 +80,9 @@ $admin = mysqli_fetch_array(mysqli_query($connect, "select * from tb_admin where
 
                     </table>
                 </div>
-            </div>
+            <div class="konten-kanan"></div>
             <div style="clear:both;">
+            </div>
             </div>
 
         </div>

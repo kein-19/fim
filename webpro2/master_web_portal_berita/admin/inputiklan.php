@@ -40,11 +40,11 @@ if(isset($_POST['submit'])){
         $gambar_error = "<span style= 'color: red;'> Gambar wajib diisi </span>";
     }else{
         // simpan gambar ke dalam folder berita
-        move_uploaded_file($foto, '../assets/images/iklan/'.$namabaru);
+        move_uploaded_file($foto, '../assets/images/iklan/' . $namabaru);
         // simpan data ke database
     
     $sql = mysqli_query($connect, "INSERT INTO tb_iklan (nm_perusahaan, isi_iklan, id_admin, tgl_mulai, tgl_selesai, link, gambar, status)
-                                   VALUES('$judul','$isi','$sesiadmin','$tglmulai','$tglselesai','$link','$namabaru','Aktif')");
+                                    VALUES('$judul','$isi','$sesiadmin','$tglmulai','$tglselesai','$link','$namabaru','Aktif')");
     if($sql){
         echo "<script>alert('Input berhasil'); document.location='iklan.php'</script>";
     }else{
@@ -71,13 +71,7 @@ if(isset($_POST['submit'])){
             <p>Berita terkini dan terupdate dikalangan mahasiswa</p>
         </div>
         <div class="menu">
-            <ul>
-            <li><a href="home.php" title="Home">Home</a></li>
-                <li><a href="berita.php" title="Berita">Berita</a></li>
-                <li><a href="iklan.php" title="Iklan">Iklan</a></li>
-                <li><a href="" title="Anggota">Anggota</a></li>
-                <li><a href="logout.php" title="Login">Logout</a></li>
-            </ul>
+            <?php include "menu.php"; ?>
         </div>
         
         <div class="konten">
@@ -132,7 +126,7 @@ if(isset($_POST['submit'])){
                 <td>&nbsp;</td>
                 <td>
                     <button type="submit" name="submit">SIMPAN</a> </button> 
-                </tr></td>
+                </td></tr>
                 </table>
                 </form>
 
