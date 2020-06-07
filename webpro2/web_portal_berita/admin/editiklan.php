@@ -1,4 +1,4 @@
-<?php 
+<?php
 error_reporting(0);
 session_start();
 include "../koneksi.php";
@@ -52,10 +52,10 @@ if(isset($_POST['submit'])){
             }
         } else{
             unlink('../assets/images/iklan/' . $gambarlama);
-            
+
             // simpan gambar ke dalam folder berita
             move_uploaded_file($foto, '../assets/images/iklan/'.$namabaru);
-            
+
             // simpan data ke database
             $sql = mysqli_query($connect, "UPDATE tb_iklan SET gambar = '$namabaru', nm_perusahaan = '$judul', isi_iklan = '$isi', tgl_mulai = '$tglmulai', tgl_selesai = '$tglselesai', link = '$link', status = '$status' WHERE id_iklan = '$id'");
             if($sql){
@@ -65,7 +65,7 @@ if(isset($_POST['submit'])){
             }
         }
     }
-}    
+}
 
 ?>
 
@@ -93,11 +93,11 @@ if(isset($_POST['submit'])){
             <?php include "menu.php"; ?>
         </div>
     </div>
-        
+
         <div class="konten">
-            <div class="konten-kiri">  
-            <h1>EDIT IKLAN</h1> 
-           
+            <div class="konten-kiri">
+            <h1>EDIT IKLAN</h1>
+
             <form action="" method="POST" enctype="multipart/form-data">
                 <table>
                 <tr>
@@ -136,14 +136,14 @@ if(isset($_POST['submit'])){
                 </tr>
                 </td>
                 <tr>
-                <td>Gambar Iklan</td>    
+                <td>Gambar Iklan</td>
                 <td>
                     <input type="file" name="gambar" accept=".jpg, .png, .JPEG, .JPG, .PNG">
                     <?= $gambar_error;?>
                 </td>
                 </tr>
                 <tr>
-                <td>Status Iklan</td>    
+                <td>Status Iklan</td>
                 <td>
                     <select name="status">
                         <option value="Aktif">Aktif</option>
@@ -154,7 +154,7 @@ if(isset($_POST['submit'])){
                 <tr>
                 <td>&nbsp;</td><td>
                 <input type="hidden" name="gambarlama" value="<?= $b['gambar']; ?>">
-                <button type="submit" name="submit">SIMPAN</a> </button> 
+                <button type="submit" name="submit">SIMPAN</a> </button>
                 </tr></td>
                 </table>
                 </form>
