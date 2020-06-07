@@ -1,4 +1,4 @@
-<?php 
+<?php
 error_reporting(0);
 session_start();
 include "../koneksi.php";
@@ -42,16 +42,16 @@ if(isset($_POST['submit'])){
         // simpan gambar ke dalam folder berita
         move_uploaded_file($foto, '../assets/images/iklan/'.$namabaru);
         // simpan data ke database
-    
+
     $sql = mysqli_query($connect, "INSERT INTO tb_iklan (nm_perusahaan, isi_iklan, id_admin, tgl_mulai, tgl_selesai, link, gambar, status)
-                                   VALUES('$judul','$isi','$sesiadmin','$tglmulai','$tglselesai','$link','$namabaru','Aktif')");
+                                    VALUES('$judul','$isi','$sesiadmin','$tglmulai','$tglselesai','$link','$namabaru','Aktif')");
     if($sql){
         echo "<script>alert('Input berhasil'); document.location='iklan.php'</script>";
     }else{
         $gambar_error = "<span style= 'color: red;'> Terjadi kesalahan sistem, silahkan coba lagi</span>";
     }
     }
-}    
+}
 ?>
 
 <!DOCTYPE html>
@@ -78,11 +78,11 @@ if(isset($_POST['submit'])){
             <?php include "menu.php"; ?>
         </div>
     </div>
-        
+
         <div class="konten">
-            <div class="konten-kiri">  
-            <h1>TAMBAH IKLAN</h1> 
-           
+            <div class="konten-kiri">
+            <h1>TAMBAH IKLAN</h1>
+
             <form action="" method="POST" enctype="multipart/form-data">
                 <table>
                 <tr>
@@ -121,7 +121,7 @@ if(isset($_POST['submit'])){
                 </tr>
                 </td>
                 <tr>
-                <td>Gambar Iklan</td>    
+                <td>Gambar Iklan</td>
                 <td>
                     <input type="file" name="gambar" accept=".jpg, .png, .JPEG, .JPG, .PNG">
                     <?= $gambar_error;?>
@@ -130,7 +130,7 @@ if(isset($_POST['submit'])){
                 <tr>
                 <td>&nbsp;</td>
                 <td>
-                    <button type="submit" name="submit">SIMPAN</a> </button> 
+                    <button type="submit" name="submit">SIMPAN</a> </button>
                 </tr></td>
                 </table>
                 </form>
