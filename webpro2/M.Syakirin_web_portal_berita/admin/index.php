@@ -40,8 +40,6 @@ if(isset($_POST['submit'])){
 
 ?>
 
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -68,7 +66,7 @@ if(isset($_POST['submit'])){
                     <?= $user_error;?>
                 </tr></td>
                 <tr><td>
-                    <input type="password" name="pass" placeholder="Masukan User Admin" class="input" >
+                    <input type="password" name="pass" placeholder="Masukan Password Admin" class="input" >
                     <?= $pass_error;?>
                 </tr></td>
                 <tr><td>
@@ -81,7 +79,7 @@ if(isset($_POST['submit'])){
             <div class="konten-kanan"></div>
             <div style="clear:both;"></div>
         </div>
-    <?php include "../footer.php"; ?>
     </div>
+    <?php include "footer.php"; ?>
 </body>
 </html>

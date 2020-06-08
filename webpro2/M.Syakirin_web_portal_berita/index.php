@@ -54,6 +54,23 @@ include "koneksi.php"; ?>
                 }
                 ?>
 
+                <hr>
+                <h3>Advertising</h3>
+                <?php
+
+                $data = mysqli_query($connect, "SELECT * FROM tb_iklan, tb_admin WHERE tb_iklan.id_admin=tb_admin.id_admin AND tb_iklan.status = 'Aktif' ORDER BY id_iklan DESC");
+                while ($row = mysqli_fetch_array($data)) {
+
+                ?>
+                    <img src="assets/images/iklan/<?= $row['gambar']; ?>" alt="<?= $row['nm_perusahaan']; ?>" style="width: 60%; height: 200px;">
+                    <a href="<?= $row['link']; ?>">
+                        <h3><?= $row['nm_perusahaan']; ?></h3>
+                    </a>
+                    <hr>
+                    <p><?= $row['isi_iklan']; ?></p>
+                    <br>
+                <?php } ?>
+
             </div>
             <div style="clear:both;"></div>
         </div>
